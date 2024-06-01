@@ -2,7 +2,7 @@ import { VercelRequest, VercelResponse } from "@vercel/node";
 import allowCors from "./_cors";
 async function handler(request: VercelRequest, response: VercelResponse) {
   const { CHALLENGE  } = request.query;
-  console.log(request.query);
+  console.log(JSON.stringify(request.query));
   response.json({
     CHALLENGE,
   });
