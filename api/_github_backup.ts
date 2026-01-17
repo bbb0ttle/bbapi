@@ -50,12 +50,12 @@ export async function backupPostToGitHub(post: Post): Promise<void> {
 
   let posts: Post[] = existingFile?.posts || [];
 
-  // Update existing post or add new one
+  // Update existing post or add new one at the beginning
   const existingIndex = posts.findIndex((p) => p.title === post.title);
   if (existingIndex >= 0) {
     posts[existingIndex] = post;
   } else {
-    posts.push(post);
+    posts.unshift(post);
   }
 
   const content = JSON.stringify(posts, null, 2);
