@@ -41,7 +41,7 @@ async function handler(request: VercelRequest, response: VercelResponse) {
     console.error("Failed to backup post to GitHub:", backupError);
   }
 
-  response.status(200).json(data[0]);
+  response.status(200).json(data?.[0] ?? null);
 }
 
 export default allowCors(handler);
