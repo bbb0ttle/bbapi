@@ -3,6 +3,7 @@
     "@types/ali-oss": "^6.16.3",
     "@vercel/node": "^1.12.1"
   },
+  "type": "module",
   "dependencies": {
     "@supabase/supabase-js": "^1.30.0",
     "ali-oss": "^6.17.1",
