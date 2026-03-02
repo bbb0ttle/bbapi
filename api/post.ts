@@ -9,7 +9,11 @@ showdown.setFlavor('github');
 const converter = new showdown.Converter();
 
 async function handler(request: VercelRequest, response: VercelResponse) {
-  const { title, content } = JSON.parse(request.body);
+  const body = typeof request.body === 'string' 
+    ? JSON.parse(request.body) 
+    : request.body;
+
+  const { title, content } = body;
 
   const titleWithoutExtension = title.split(".")[0];
 
